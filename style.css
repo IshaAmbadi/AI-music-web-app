@@ -1,0 +1,41 @@
+body {
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.heading {
+    font-size: 35px;
+    width: 100%;
+    margin: 0px;
+    background-color: #014b5a;
+    color: #F8F1F1;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.heading:hover{background-color: #023c47}
+
+.note {
+    font-size: 27px;
+    color: rgb(160, 112, 53);
+}
+
+#songPlaying {
+    color: #E8AA42;
+    size: 27px;
+    font-weight: bolder;
+}
+
+.startButton {
+    background-color: #E57C23;
+    color: #fed182;
+    width: 100px;
+    font-size: 30px;
+    border-radius: 6px;
+    border: #E57C23;
+}
+
+canvas {
+    border: 5px solid rgb(237, 235, 255);
+    border-radius: 20px;
+}
