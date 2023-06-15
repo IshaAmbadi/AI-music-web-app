@@ -11,6 +11,7 @@ body {
     color: #F8F1F1;
     padding-bottom: 15px;
     padding-top: 15px;
+    box-shadow: 0px 10px 12px #00181d;
 }
 
 .heading:hover{background-color: #023c47}
@@ -33,10 +34,15 @@ body {
     font-size: 30px;
     border-radius: 6px;
     border: #E57C23;
+    box-shadow: 5px 5px 7px #002b34;
 }
 
 canvas {
     border: 5px solid rgb(237, 235, 255);
     border-radius: 20px;
-    margin-top: 80px;
+    margin-right: 150px;
+    margin-top: 200px;
+    border: 10px solid rgb(237, 235, 255);
+    box-shadow: 10px 5px 14px #002b34;
 }
+
