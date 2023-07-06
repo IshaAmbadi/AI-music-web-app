@@ -6,9 +6,17 @@ leftWristY = 0;
 rightWristX = 0;
 rightWristY = 0;
 
+scoreLeftWrist = 0;
+scoreRightWrist = 0;
+
+playTrack1 = 0;
+playTrack2 = 0;
+
 function preload() {
     track1 = loadSound("funkmusicTrack1.mp3");
     track2 = loadSound("swingmusicTrack2.mp3")
+
+
 }
 
 function setup() {
@@ -25,11 +33,24 @@ function setup() {
 function draw() {
     image(video, 0, 0, 600, 500)
 
+        fill('red');
+        stroke('red');
+    if (scoreLeftWrist > 0.2) {
+        circle(leftWristX,leftWristY,30);
+        leftWristYAsNumber = Number(leftWristY);
+        roundedNumberY = floor(leftWristYAsNumber);
+        track2.stop()
+
+        if (playTrack1 == false) {
+            track1.play()
+            document.getElementById("songPlaying").innerHTML = "Current song playing - Funk Music";
+        }
+
+        playTrack1 = track1.isPlaying()
+        console.log("status of song 1 is "+playTrack1);
+    }
 }
 
-function play() {
-    track1.play();
-}
 
 function modelLoaded() {
     console.log('PoseNet is initialized');
@@ -46,5 +67,8 @@ function gotposes(results) {
         rightWristX = results[0].pose.rightWrist.x;
         rightWristY = results[0].pose.rightWrist.y;
         console.log("rightWristX = " + rightWristX + "rightWristY = " + rightWristY);
+
+        scoreLeftWrist = results[0].pose.keypoints[9].score;
+        console.log("confidence = " + scoreLeftWrist);
     }
 }
